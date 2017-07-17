@@ -27,8 +27,8 @@ $ php -S 0.0.0.0:8080 -t public/ public/index.php
 $ composer run --timeout 0 serve
 ```
 
-This will start the cli-server on port 8080, and bind it to all network
-interfaces. You can then visit the site at http://localhost:8080/
+This will start the cli-server on port 8050, and bind it to all network
+interfaces. You can then visit the site at http://localhost:8050/album
 - which will bring up Zend Framework welcome page.
 
 **Note:** The built-in CLI server is *for development only*.
