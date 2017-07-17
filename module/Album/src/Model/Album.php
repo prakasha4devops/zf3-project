@@ -2,7 +2,6 @@
 
 namespace Album\Model;
 
-// Add the following import statements:
 use DomainException;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
@@ -19,13 +18,29 @@ use Zend\Validator\StringLength;
  */
 class Album implements InputFilterAwareInterface
 {
+    /**
+     * @var integer
+     */
     public $id;
+
+    /**
+     * @var
+     */
     public $artist;
+
+    /**
+     * @var string
+     */
     public $title;
 
-// Add this property:
+    /**
+     * @var InputFilterInterface
+     */
     private $inputFilter;
 
+    /**
+     * @param array $data
+     */
     public function exchangeArray(array $data)
     {
         $this->id = !empty($data['id']) ? $data['id'] : null;
@@ -33,8 +48,11 @@ class Album implements InputFilterAwareInterface
         $this->title = !empty($data['title']) ? $data['title'] : null;
     }
 
-    /* Add the following methods: */
-
+    /**
+     * @param InputFilterInterface $inputFilter
+     *
+     * @return void|InputFilterAwareInterface
+     */
     public function setInputFilter(InputFilterInterface $inputFilter)
     {
         throw new DomainException(
@@ -45,6 +63,9 @@ class Album implements InputFilterAwareInterface
         );
     }
 
+    /**
+     * @return InputFilter|InputFilterInterface
+     */
     public function getInputFilter()
     {
         if ($this->inputFilter) {
@@ -109,4 +130,13 @@ class Album implements InputFilterAwareInterface
 
         return $this->inputFilter;
     }
+
+    /**
+     * @return array
+     */
+    public function getArrayCopy()
+    {
+        return get_object_vars($this);
+    }
+
 }

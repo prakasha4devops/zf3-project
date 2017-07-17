@@ -18,7 +18,7 @@ class AlbumForm extends Form
      */
     public function __construct($name = null)
     {
-      // We will ignore the name provided to the constructor
+        // We will ignore the name provided to the constructor
         parent::__construct('album');
 
         $this->add(
@@ -27,6 +27,7 @@ class AlbumForm extends Form
                 'type' => 'hidden',
             ]
         );
+
         $this->add(
             [
                 'name' => 'title',
@@ -36,6 +37,7 @@ class AlbumForm extends Form
                 ],
             ]
         );
+
         $this->add(
             [
                 'name' => 'artist',
@@ -45,6 +47,7 @@ class AlbumForm extends Form
                 ],
             ]
         );
+
         $this->add(
             [
                 'name' => 'submit',
