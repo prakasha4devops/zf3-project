@@ -202,6 +202,12 @@ configuration for each of:
 - [phpcs](https://github.com/squizlabs/php_codesniffer)
 - [phpunit](https://phpunit.de)
 
+Unit test
+
+```bash
+./vendor/bin/phpunit --testsuite Album
+```
+
 Additionally, it comes with some basic tests for the shipped
 `Application\Controller\IndexController`.
 
