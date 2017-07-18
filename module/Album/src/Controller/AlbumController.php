@@ -14,12 +14,23 @@ use Album\Model\AlbumTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
+/**
+ * Class AlbumController
+ *
+ * @package Album\Controller
+ */
 class AlbumController extends AbstractActionController
 {
-    // Add this property:
-    private $table;
+    /**
+     * @var AlbumTable
+     */
+     private $table;
 
-    // Add this constructor:
+    /**
+     * AlbumController constructor.
+     *
+     * @param AlbumTable $table
+     */
     public function __construct(AlbumTable $table)
     {
         $this->table = $table;
